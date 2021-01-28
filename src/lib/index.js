@@ -46,6 +46,7 @@ export default class TypingEffect extends Component {
         }, this.props.speed);
       });
     } else {
+      if(this.props.eraseDelay <= 0 ) return; // nerver erase
       this._timeout = setTimeout(() => {
         this.erase();
       }, this.props.eraseDelay);
